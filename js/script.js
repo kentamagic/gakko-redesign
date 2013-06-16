@@ -1,5 +1,21 @@
 $(function(){
-  $("#playVid").click(play);
+	//function for the vimeo window to replace hero img
+ 	$("#playVid").click(play);
+
+ 	//Detect scroll and change the position of the menu
+	$(window).on('scroll', function () {
+
+    	var scrollTop     = $(window).scrollTop(),
+        	elementOffset = $(".low-menu").offset().top,
+        	distance      = (elementOffset - scrollTop);
+
+        if(distance < 20){
+        	fadeIn
+        }
+	});
+
+
+
 });
 
 function play(){
