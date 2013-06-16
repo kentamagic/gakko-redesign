@@ -5,12 +5,20 @@ $(function(){
  	//Detect scroll and change the position of the menu
 	$(window).on('scroll', function () {
 
+		var container = $(".container"),
+		    low = $(".low-menu"),
+		    high = $(".high-menu");
+
     	var scrollTop     = $(window).scrollTop(),
-        	elementOffset = $(".low-menu").offset().top,
+        	elementOffset = $(container).offset().top,
         	distance      = (elementOffset - scrollTop);
 
-        if(distance < 20){
-        	fadeIn
+        if(distance < -500){
+        	$(low).fadeOut("slow");
+        	$(high).fadeIn("slow");
+        }else{
+        	$(high).hide();
+        	$(low).show();
         }
 	});
 
